@@ -1,0 +1,11 @@
+{
+  "name": "stepback",
+  "version": "0.1.0",
+  "description": "Helps Claude recognize when a bug is a symptom of a deeper design problem, compare patch/refactor/redesign options, and verify the chosen solution.",
+  "author": {
+    "name": "StepBack contributors"
+  },
+  "license": "MIT",
+  "keywords": ["architecture", "root-cause-analysis", "debugging", "refactoring", "software-design", "edge-cases"],
+  "hooks": "./hooks/hooks.json"
+}

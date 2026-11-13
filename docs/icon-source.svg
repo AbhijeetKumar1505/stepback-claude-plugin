@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    StepBack plugin icon source for .claude-plugin/icon.png.
+    To update the icon after editing this file, run: npm run icon
+    Directory listing limits: square PNG or JPEG, 512 to 2048 px per side, under 2 MB.
+    Note: XML comments cannot contain a double hyphen, so keep command-line flags out of this file.
+  -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2E4A8C"/>
+      <stop offset="1" stop-color="#15213F"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="1024" fill="url(#bg)"/>
+  <!-- staircase descending left to right -->
+  <path d="M200 812 V420 H404 V552 H608 V684 H812 V812 Z"
+        fill="#F4F1EA" stroke="#F4F1EA" stroke-width="28" stroke-linejoin="round"/>
+  <!-- arrow: from the bottom step, arcing back up to the top step -->
+  <!-- end tangent d = (-0.814, 0.581); head = tip E+90d, base E-40d ± 70n -->
+  <path d="M712 620 C712 320 520 200 380 300"
+        fill="none" stroke="#F6B73C" stroke-width="60" stroke-linecap="round"/>
+  <polygon points="307,352 454,334 372,220" fill="#F6B73C" stroke="#F6B73C" stroke-width="18" stroke-linejoin="round"/>
+</svg>

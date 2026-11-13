@@ -1,0 +1,17 @@
+{
+  "name": "stepback-marketplace",
+  "owner": { "name": "StepBack contributors" },
+  "metadata": {
+    "description": "Architectural reasoning tools for Claude",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "stepback",
+      "source": "./",
+      "description": "Step back before you patch. Root-cause analysis and architectural reconsideration.",
+      "version": "0.1.0",
+      "category": "development"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "stepback-claude-plugin",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Architectural reconsideration plugin for Claude",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "validate": "node scripts/validate.mjs",
+    "icon": "node scripts/render-icon.mjs"
+  },
+  "engines": { "node": ">=20" }
+}
