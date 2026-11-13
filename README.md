@@ -65,7 +65,18 @@ Skills and commands are the cross-surface layer. Hooks and subagents run in Cowo
 
 ## Hybrid trigger behavior
 
-The hook listens only to `UserPromptSubmit`. It checks the user's submitted prompt for a small set of bug/failure/repetition signals and emits a short `additionalContext` reminder. It does **not** infer from source code, inspect the repository, persist project data, call external services, or change the user's request. The skill provides the deeper workflow when relevant. Users can bypass it by saying they only want a narrow/local fix.
+The hook listens only to `UserPromptSubmit`. It checks the user's submitted prompt for a small set of bug/failure/repetition signals and emits a short `additionalContext` reminder. It does **not** infer from source code, inspect the repository, persist project data, call external services, or change the user's request. The skill provides the deeper workflow when relevant.
+
+What counts as a signal:
+
+- **Failure words:** bug, regression, crash, broke/broken, fails/failing, flaky, "doesn't work", "stopped working".
+- **Hitting an error:** "getting an error", "throws a TypeError", "uncaught exception", or pasted output such as `TypeError: ...` or `error[E0382]: ...`.
+- **Edge cases and stopgaps:** edge/corner case, workaround, hotfix, root cause.
+- **A problem coming back:** "keeps breaking", "same issue", "another fix", "patched this before", "happening again".
+
+Words that also turn up in ordinary requests, such as "again", "error", "patch", "architecture" and "refactor", only count inside those phrases. "Try again with port 8080", "add error handling" and "bump the patch version" don't trigger it.
+
+To skip the reminder, ask for a narrow fix in the prompt: "just patch it", "only a minimal fix", "one-line hotfix", or "don't refactor". The hook then stays quiet even when the prompt contains failure words.
 
 ## Decision policy
 
