@@ -17,7 +17,7 @@ for (const file of required) {
     failed = true;
   }
 }
-for (const file of ['.claude-plugin/plugin.json', 'hooks/hooks.json', 'marketplace/marketplace.json']) {
+for (const file of ['.claude-plugin/plugin.json', 'hooks/hooks.json', '.claude-plugin/marketplace.json']) {
   try { JSON.parse(fs.readFileSync(path.join(root, file), 'utf8')); }
   catch (error) { console.error(`Invalid JSON ${file}: ${error.message}`); failed = true; }
 }

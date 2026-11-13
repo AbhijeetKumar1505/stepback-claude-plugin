@@ -44,7 +44,18 @@ claude --plugin-dir ./stepback-claude-plugin
 
 ### Marketplace install
 
-After publishing the repository and adding it to a Claude plugin marketplace, users can install it through the marketplace workflow. A minimal marketplace manifest is provided in `marketplace/marketplace.json`.
+This repository is also a plugin marketplace (`.claude-plugin/marketplace.json`). In Claude Code 2.1.275 or later, install in one step:
+
+```text
+/plugin install stepback --marketplace AbhijeetKumar1505/stepback-claude-plugin
+```
+
+On older versions, add the marketplace first, then install:
+
+```text
+/plugin marketplace add AbhijeetKumar1505/stepback-claude-plugin
+/plugin install stepback@stepback-marketplace
+```
 
 ## Install in Claude on the web or Desktop
 
@@ -72,13 +83,13 @@ StepBack must not turn every bug into an architecture project. It should prefer 
 ```text
 stepback-claude-plugin/
 ├── .claude-plugin/plugin.json
+├── .claude-plugin/marketplace.json
 ├── agents/                    # specialist subagents
 ├── commands/                  # explicit slash commands
 ├── hooks/hooks.json           # low-noise hybrid trigger
 ├── hooks/stepback-hook.mjs    # stdlib-only Node hook
 ├── skills/architectural-reconsideration/SKILL.md
 ├── tests/                     # Node built-in test runner
-├── marketplace/marketplace.json
 ├── docs/                       # architecture, security, evaluation
 ├── .github/workflows/ci.yml
 ├── package.json
