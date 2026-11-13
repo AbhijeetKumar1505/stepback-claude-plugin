@@ -33,11 +33,14 @@ StepBack is deliberately **hybrid**:
 
 ### Local development install
 
+Clone the [repository](https://github.com/AbhijeetKumar1505/stepback-claude-plugin) and point Claude Code at it:
+
 ```bash
-claude --plugin-dir /path/to/stepback
+git clone https://github.com/AbhijeetKumar1505/stepback-claude-plugin.git
+claude --plugin-dir ./stepback-claude-plugin
 ```
 
-Point `--plugin-dir` at the folder that contains `.claude-plugin/plugin.json` (its name doesn't matter). From inside that folder, use `claude --plugin-dir .`. For iterative development, restart Claude Code after changing plugin metadata or components if changes are not picked up.
+`--plugin-dir` takes the folder that contains `.claude-plugin/plugin.json` (its name doesn't matter). From inside that folder, use `claude --plugin-dir .`. For iterative development, restart Claude Code after changing plugin metadata or components if changes are not picked up.
 
 ### Marketplace install
 
@@ -67,7 +70,7 @@ StepBack must not turn every bug into an architecture project. It should prefer 
 ## Repository layout
 
 ```text
-stepback/
+stepback-claude-plugin/
 ├── .claude-plugin/plugin.json
 ├── agents/                    # specialist subagents
 ├── commands/                  # explicit slash commands
