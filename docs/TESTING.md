@@ -2,7 +2,7 @@
 
 ## Automated repository checks
 
-- Hook unit tests cover trigger positives, negatives, malformed/empty inputs, and advisory-only output.
+- Hook unit tests cover trigger positives, negatives (including common false-positive phrasings), narrow-fix opt-outs, malformed/empty inputs, long-prompt performance, and advisory-only output.
 - Structural validation checks required components and JSON syntax.
 - CI runs the checks on Node 20 and 22.
 

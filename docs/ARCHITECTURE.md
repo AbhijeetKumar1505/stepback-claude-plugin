@@ -3,7 +3,7 @@
 ## Layers
 
 1. **Cross-surface reasoning layer:** the `architectural-reconsideration` skill and four slash commands. These are the portable behavior surface.
-2. **Hybrid trigger layer:** the Claude Code `UserPromptSubmit` hook detects a small set of prompt phrases and appends a reminder. It is advisory, stateless, and fail-open.
+2. **Hybrid trigger layer:** the Claude Code `UserPromptSubmit` hook detects a small set of prompt phrases and appends a reminder, unless the prompt explicitly asks for a narrow fix. Matching is regex-based, not a classifier. It is advisory, stateless, and fail-open.
 3. **Specialist reasoning layer:** four subagents divide root-cause investigation, architecture critique, alternative design, and edge-case analysis. They report evidence and recommendations; they do not edit files.
 4. **Implementation layer:** the main Claude session makes changes only when the user asks, then verifies them.
 
